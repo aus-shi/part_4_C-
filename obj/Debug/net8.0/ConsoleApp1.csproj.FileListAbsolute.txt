@@ -12,3 +12,4 @@ C:\Users\V\Code\C#_Code\Learn\part4\ConsoleApp1\obj\Debug\net8.0\refint\ConsoleA
 C:\Users\V\Code\C#_Code\Learn\part4\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
 C:\Users\V\Code\C#_Code\Learn\part4\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
 C:\Users\V\Code\C#_Code\Learn\part4\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
+C:\Users\V\Code\C#_Code\Learn\part4\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json
