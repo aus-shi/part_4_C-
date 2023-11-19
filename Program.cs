@@ -76,9 +76,29 @@
 // Console.WriteLine(result);
 
 
-// Compare casting and converting a decimal into an int
-int value = (int)1.5m; // casting truncates
-Console.WriteLine(value);
+// // Compare casting and converting a decimal into an int
+// int value = (int)1.5m; // casting truncates
+// Console.WriteLine(value);
 
-int value2 = Convert.ToInt32(1.5m); // converting rounds up
-Console.WriteLine(value2);
+// int value2 = Convert.ToInt32(1.5m); // converting rounds up
+// Console.WriteLine(value2);
+
+//Exercise - Examine the TryParse() method
+// string name = "Bob";
+// Console.WriteLine(int.Parse(name)); //unable to convert this string into int, because it is not a digit at all
+
+/*However any error can be catch using TryParse() */
+//Example
+string value = "102";
+int result = 0;
+if (int.TryParse(value, out result))
+{
+    Console.WriteLine($"Measurement: {result}");
+}
+else
+{
+    Console.WriteLine("Unable to report the measurement.");
+}
+
+Console.WriteLine($"Measurement (w/ offset): {50 + result}"); //if result is able to changed to int, then the value will != 50
+
