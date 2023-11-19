@@ -26,7 +26,7 @@
 // Console.WriteLine(shortenedString);
 
 
- /* Convert data types using casting and conversion techniques in C# */
+/* Convert data types using casting and conversion techniques in C# */
 
 // int first = 23;
 // string second = "4";
@@ -89,16 +89,52 @@
 
 /*However any error can be catch using TryParse() */
 //Example
-string value = "102";
-int result = 0;
-if (int.TryParse(value, out result))
+// string value = "102";
+// int result = 0;
+// if (int.TryParse(value, out result))
+// {
+//     Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//     Console.WriteLine("Unable to report the measurement.");
+// }
+
+// Console.WriteLine($"Measurement (w/ offset): {50 + result}"); //if result is able to changed to int, then the value will != 50
+
+//Example with int value that cant be parsed
+// string value = "bad";
+// int result = 0;
+// if (int.TryParse(value, out result))
+// {
+//     Console.WriteLine($"Measurement: {result}");
+// }
+// else
+// {
+//     Console.WriteLine("Unable to report the measurement.");
+// }
+
+// if (result > 0)
+//     Console.WriteLine($"Measurement (w/ offset): {50 + result}");
+
+
+/* Exercise - Complete a challenge to combine string array values as strings and as integers */
+string[] values = { "12.3", "45", "ABC", "11", "DEF" };
+
+decimal total = 0m;
+string message = "";
+
+foreach (var value in values)
 {
-    Console.WriteLine($"Measurement: {result}");
-}
-else
-{
-    Console.WriteLine("Unable to report the measurement.");
+    decimal number; // stores the TryParse "out" value
+    if (decimal.TryParse(value, out number))
+    {
+        total += number;
+    } else
+    {
+        message += value;
+    }
 }
 
-Console.WriteLine($"Measurement (w/ offset): {50 + result}"); //if result is able to changed to int, then the value will != 50
-
+Console.WriteLine($"Message: {message}");
+Console.WriteLine($"Total: {total}");
