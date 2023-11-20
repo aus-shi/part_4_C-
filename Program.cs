@@ -165,8 +165,71 @@ float value3 = 4.3f;
 // Console.WriteLine($"Big Number: {bigNumber}");
 
 //Example of explicit conversion
-double bigNumber = 10.75;  // This is a big number
-int smallNumber = (int)bigNumber;  // Explicit conversion: Big to Small
+// double bigNumber = 10.75;  // This is a big number
+// int smallNumber = (int)bigNumber;  // Explicit conversion: Big to Small
 
-Console.WriteLine($"Big Number: {bigNumber}");
-Console.WriteLine($"Small Number: {smallNumber}");
+// Console.WriteLine($"Big Number: {bigNumber}");
+// Console.WriteLine($"Small Number: {smallNumber}");
+
+/* Perform operations on arrays using helper methods in C#  */
+//Sorting the order of values in array
+// string[] pallets = { "B14", "A11", "B12", "A13" };
+
+// Console.WriteLine("Sorted...");
+// Array.Sort(pallets); //Sort helper
+// foreach (var pallet in pallets)
+// {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// //Reversing the order of pallets
+// Console.WriteLine("");
+// Console.WriteLine("Reverse order....");
+// Array.Reverse(pallets);
+
+// foreach (var pallett in pallets)
+// {
+//     Console.WriteLine($"-- {pallett}");
+// }
+
+//Use array methods to clear and resize an array
+// string[] pallets = { "B14", "A11", "B12", "A13" };
+// Console.WriteLine("");
+
+// Array.Clear(pallets, 0, 2); //(array, index to clear, how many index needs to be cleared)
+// Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+// foreach (var pallet in pallets)
+// {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// Empty string versus null
+// When you use Array.Clear(), the elements that were cleared no longer reference a string in memory. In fact, the element points to nothing at all.
+//  pointing to nothing is an important concept that can be difficult to grasp at first.
+// What if you attempt to retrieve the value of an element that was affected by the Array.Clear() method, could you do it?
+
+
+//Acess the value of cleared element
+//Exception will be thrown bcs of the null value
+//It is better to check for null first before accessing the element
+string[] pallets = { "B14", "A11", "B12", "A13" };
+Console.WriteLine("");
+
+Array.Clear(pallets, 0, 2);
+Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
+
+Console.WriteLine("");
+Array.Resize(ref pallets, 6);
+Console.WriteLine($"Resizing 6 ... count: {pallets.Length}");
+
+pallets[4] = "C01";
+pallets[5] = "C02";
+
+foreach (var pallet in pallets)
+{
+    Console.WriteLine($"-- {pallet}");
+}
