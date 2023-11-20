@@ -290,15 +290,44 @@ float value3 = 4.3f;
 
 /* Exercise - Complete a challenge to reverse words in a sentence */
 
-string pangram = "The quick brown fox jumps over the lazy dog";
+// string pangram = "The quick brown fox jumps over the lazy dog";
 
-char[] pangramArray  = pangram.ToArray();
-Array.Reverse(pangramArray);
+// // Step 1
+// string[] message = pangram.Split(' ');
 
-foreach (var pangrams in pangramArray)
+// //Step 2
+// string[] newMessage = new string[message.Length];
+
+// // Step 3
+// for (int i = 0; i < message.Length; i++)
+// {
+//     char[] letters = message[i].ToCharArray();
+//     Array.Reverse(letters);
+//     newMessage[i] = new string(letters);
+// }
+
+// //Step 4
+// string result = String.Join(" ", newMessage);
+// Console.WriteLine(result);
+
+
+/* Exercise - Complete a challenge to parse a string of orders, sort the orders and tag possible errors */
+
+string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+
+string[] orderStreamArray = orderStream.Split(",");
+
+Array.Sort(orderStreamArray);
+
+foreach (var orders in orderStreamArray)
 {
-    Console.WriteLine($"{pangrams}");
+    if (orders.Length != 4)
+    {
+        // Console.WriteLine($"{orders} - Error");
+        Console.WriteLine(orders + "\t- Error");
+    }
+    else
+    {
+        Console.WriteLine(orders);
+    }
 }
-
-string result = new string(pangramArray);
-Console.WriteLine($"{result}");
