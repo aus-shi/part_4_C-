@@ -212,24 +212,93 @@ float value3 = 4.3f;
 //Acess the value of cleared element
 //Exception will be thrown bcs of the null value
 //It is better to check for null first before accessing the element
-string[] pallets = { "B14", "A11", "B12", "A13" };
-Console.WriteLine("");
+// string[] pallets = { "B14", "A11", "B12", "A13" };
+// Console.WriteLine("");
 
-Array.Clear(pallets, 0, 2);
-Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
-foreach (var pallet in pallets)
+// Array.Clear(pallets, 0, 2);
+// Console.WriteLine($"Clearing 2 ... count: {pallets.Length}");
+// foreach (var pallet in pallets)
+// {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// Console.WriteLine("");
+// Array.Resize(ref pallets, 6);
+// Console.WriteLine($"Resizing 6 ... count: {pallets.Length}");
+
+// pallets[4] = "C01";
+// pallets[5] = "C02";
+
+// foreach (var pallet in pallets)
+// {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// Console.WriteLine("");
+// Array.Resize(ref pallets, 3);
+// Console.WriteLine($"Resizing 3 ... count: {pallets.Length}");
+
+// foreach (var pallet in pallets)
+// {
+//     Console.WriteLine($"-- {pallet}");
+// }
+
+// //Calculating null in pallets
+// int totalNull = 0;
+// foreach (var pallet in pallets)
+// {
+//     if (pallet == null)
+//     {
+//         totalNull += 1;
+//     }
+// }
+// Console.WriteLine($"\nTotal null:...{totalNull}");
+
+
+/* Exercise - Discover Split() and Join() */
+
+// string value = "abc123"; //string
+// char[] valueArray = value.ToCharArray(); //change the string to char array
+// Array.Reverse(valueArray); //Sort desc the valueArray
+// string result = new string(valueArray); //Change the valueArray into a string
+// Console.WriteLine(result);
+
+/* Combine all of the chars into a new comma-separated-value string using Join() */
+
+// string value = "abc123";
+// char[] valueArray = value.ToCharArray();
+// Array.Reverse(valueArray);
+
+// // string result = new string(valueArray);
+// string result = String.Join(",", valueArray);
+// Console.WriteLine(result);
+
+/* Split() the comma-separated-value string into an array of strings */
+// string value = "abc123";
+// char[] valueArray = value.ToCharArray();
+// Array.Reverse(valueArray);
+
+// // string result = new string(valueArray);
+// string result = String.Join(",", valueArray);
+// Console.WriteLine(result);
+
+// string[] items = result.Split(',');
+// foreach (string item in items)
+// {
+//     Console.WriteLine(item);
+// }
+
+/* Exercise - Complete a challenge to reverse words in a sentence */
+
+string pangram = "The quick brown fox jumps over the lazy dog";
+
+char[] pangramArray  = pangram.ToArray();
+Array.Reverse(pangramArray);
+
+foreach (var pangrams in pangramArray)
 {
-    Console.WriteLine($"-- {pallet}");
+    Console.WriteLine($"{pangrams}");
 }
 
-Console.WriteLine("");
-Array.Resize(ref pallets, 6);
-Console.WriteLine($"Resizing 6 ... count: {pallets.Length}");
-
-pallets[4] = "C01";
-pallets[5] = "C02";
-
-foreach (var pallet in pallets)
-{
-    Console.WriteLine($"-- {pallet}");
-}
+string result = new string(pangramArray);
+Console.WriteLine($"{result}");
