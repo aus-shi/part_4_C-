@@ -355,7 +355,7 @@
 // decimal price = 123.45m;
 // int discount = 50;
 // decimal discounted = price - discount;
-// Console.WriteLine($"Price: {price:C} (Save {discount:C}), After discounted price: {discounted:C}"); 
+// Console.WriteLine($"Price: {price:C} (Save {discount:C}), After discounted price: {discounted:C}");
 
 /* 4. Formatting numbers */
 // The N numeric format specifier makes numbers more readable.
@@ -389,14 +389,99 @@
 // Console.WriteLine(yourDiscount);
 
 /* Display the invoice number using string interpolation */
-int invoiceNumber = 1201;
-decimal productShares = 25.4568m;
-decimal subtotal = 2750.00m;
-decimal taxPercentage = .15825m;
-decimal total = 3185.19m;
+// int invoiceNumber = 1201;
+// decimal productShares = 25.4568m;
+// decimal subtotal = 2750.00m;
+// decimal taxPercentage = .15825m;
+// decimal total = 3185.19m;
 
-Console.WriteLine($"Invoice Number: {invoiceNumber}");
-Console.WriteLine($"   Shares: {productShares:N3} Product");
-Console.WriteLine($"     Sub Total: {subtotal:C}");
-Console.WriteLine($"           Tax: {taxPercentage:P2}");
-Console.WriteLine($"     Total Billed: {total:C}");
+// Console.WriteLine($"Invoice Number: {invoiceNumber}");
+// Console.WriteLine($"   Shares: {productShares:N3} Product");
+// Console.WriteLine($"     Sub Total: {subtotal:C}");
+// Console.WriteLine($"           Tax: {taxPercentage:P2}");
+// Console.WriteLine($"     Total Billed: {total:C}");
+
+
+/* Exercise - Discover padding and alignment */
+// string first = "Hello";
+// string second = "World";
+// string result = string.Format("{0} {1}!", first, second);
+// Console.WriteLine(result);
+
+/* Formatting strings by adding whitespace before or after */
+// string input = "Pad this";
+//  Console.WriteLine(input.PadLeft(12));
+//  Console.WriteLine(input.PadRight(12));
+
+/* Overloaded Method */
+// string input = "Pad this";
+// Console.WriteLine(input.PadLeft(12, '-'));
+// Console.WriteLine(input.PadRight(12, '-'));
+
+
+/* Exercise - Working with padded strings */
+// string paymentId = "769C";
+// string payeeName = "Mr. Stephen Ortega";
+// string paymentAmount = "$5,000.00";
+// string myWords = "Learning C#";
+// var formattedLine = paymentId.PadRight(6);
+// formattedLine += payeeName.PadRight(24);
+// formattedLine += paymentAmount.PadLeft(10);
+
+// Console.WriteLine(formattedLine);
+// Console.WriteLine(myWords.PadLeft(12));
+// Console.WriteLine("1234567890123456789012345678901234567890");
+
+/* Exercise - Complete a challenge to apply string interpolation to a form letter */
+//Desired output//
+/* 
+Dear Ms. Barros,
+As a customer of our Magic Yield offering we are excited to tell you about a new financial product that would dramatically increase your return.
+
+Currently, you own 2,975,000.00 shares at a return of 12.75 %.
+
+Our new product, Glorious Future offers a return of 13.13 %.  Given your current volume, your potential profit would be ¤63,000,000.00.
+
+Here's a quick comparison:
+
+Magic Yield         12.75 %   $55,000,000.00      
+Glorious Future     13.13 %   $63,000,000.00
+*/
+
+string customerName = "Ms. Barros";
+
+string currentProduct = "Magic Yield";
+int currentShares = 2975000;
+decimal currentReturn = 0.1275m;
+decimal currentProfit = 55000000.0m;
+
+string newProduct = "Glorious Future";
+decimal newReturn = 0.13125m;
+decimal newProfit = 63000000.0m;
+
+// Your logic here
+
+string currentReturnString = $"{currentReturn:P2}";
+string newReturnString = $"{newReturn:P2}";
+string currentProfitString = $"{currentProfit:C2}";
+string newProfitString = $"{newProfit:C2}";
+
+string comparisonMessage = "";
+string comparisonMessage2 = "";
+Console.WriteLine($"Dear {customerName}. As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.");
+Console.WriteLine($"Currently, you own {currentShares:C3} shares at a return of {currentReturn:P2}.");
+Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:C2}. Given your current volumne, your potential profis would be {newProfit:C6}");
+// Your logic here
+Console.WriteLine("Here's a quick comparison:\n");
+
+comparisonMessage += currentProduct.PadLeft(11);
+comparisonMessage += currentReturnString.PadLeft(18);
+comparisonMessage += currentProfitString.PadLeft(20);
+
+comparisonMessage2 += newProduct.PadLeft(11);
+comparisonMessage2 += newReturnString.PadLeft(14);
+comparisonMessage2 += newProfitString.PadLeft(20);
+
+// Console.WriteLine("1234567890123456789012345678901234567890");
+Console.WriteLine(comparisonMessage);
+Console.WriteLine(comparisonMessage2);
