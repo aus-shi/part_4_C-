@@ -469,18 +469,18 @@ string newProfitString = $"{newProfit:C2}";
 string comparisonMessage = "";
 string comparisonMessage2 = "";
 Console.WriteLine($"Dear {customerName}. As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.");
-Console.WriteLine($"Currently, you own {currentShares:C3} shares at a return of {currentReturn:P2}.");
-Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:C2}. Given your current volumne, your potential profis would be {newProfit:C6}");
+Console.WriteLine($"Currently, you own {currentShares:C2} shares at a return of {currentReturn:P2}.");
+Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:P2}. Given your current volumne, your potential profis would be {newProfit:C2}");
 // Your logic here
 Console.WriteLine("Here's a quick comparison:\n");
 
 comparisonMessage += currentProduct.PadLeft(11);
 comparisonMessage += currentReturnString.PadLeft(18);
 comparisonMessage += currentProfitString.PadLeft(20);
-
-comparisonMessage2 += newProduct.PadLeft(11);
-comparisonMessage2 += newReturnString.PadLeft(14);
-comparisonMessage2 += newProfitString.PadLeft(20);
+comparisonMessage += "\n";
+comparisonMessage += newProduct.PadLeft(11);
+comparisonMessage += newReturnString.PadLeft(14);
+comparisonMessage += newProfitString.PadLeft(20);
 
 // Console.WriteLine("1234567890123456789012345678901234567890");
 Console.WriteLine(comparisonMessage);
