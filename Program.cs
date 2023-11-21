@@ -142,9 +142,9 @@
 
 /* Exercise - Complete a challenge to output math operations as specific number types */
 
-int value1 = 12;
-decimal value2 = 6.2m;
-float value3 = 4.3f;
+// int value1 = 12;
+// decimal value2 = 6.2m;
+// float value3 = 4.3f;
 
 // Your code here to set result1
 // Hint: You need to round the result to nearest integer (don't just truncate)
@@ -313,21 +313,90 @@ float value3 = 4.3f;
 
 /* Exercise - Complete a challenge to parse a string of orders, sort the orders and tag possible errors */
 
-string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+// string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
 
-string[] orderStreamArray = orderStream.Split(",");
+// string[] orderStreamArray = orderStream.Split(",");
 
-Array.Sort(orderStreamArray);
+// Array.Sort(orderStreamArray);
 
-foreach (var orders in orderStreamArray)
-{
-    if (orders.Length != 4)
-    {
-        // Console.WriteLine($"{orders} - Error");
-        Console.WriteLine(orders + "\t- Error");
-    }
-    else
-    {
-        Console.WriteLine(orders);
-    }
-}
+// foreach (var orders in orderStreamArray)
+// {
+//     if (orders.Length != 4)
+//     {
+//         // Console.WriteLine($"{orders} - Error");
+//         Console.WriteLine(orders + "\t- Error");
+//     }
+//     else
+//     {
+//         Console.WriteLine(orders);
+//     }
+// }
+
+
+/* Format alphanumeric data for presentation in C# */
+/*Exercise - Investigate string formatting basics*/
+/* 1. This is called Composite Formatting*/
+// string first = "Hello";
+// string second = "World";
+// string result = string.Format("{0} {1}!", first, second);
+// Console.WriteLine(result);
+// Console.WriteLine("{1} {0}!", first, second);
+// Console.WriteLine("{0} {0} {0}!", first, second);
+
+/* 2. This is called, string interpolation */
+// string first = "Hello";
+// string second = "World";
+// Console.WriteLine($"{first} {second}!");
+// Console.WriteLine($"{second} {first}!");
+// Console.WriteLine($"{first} {first} {first}!");
+
+/* 3. Formatting currency */
+/* The currency is based on your PC region/country settings */
+// decimal price = 123.45m;
+// int discount = 50;
+// decimal discounted = price - discount;
+// Console.WriteLine($"Price: {price:C} (Save {discount:C}), After discounted price: {discounted:C}"); 
+
+/* 4. Formatting numbers */
+// The N numeric format specifier makes numbers more readable.
+// decimal measurement = 123456.78912m;
+// Console.WriteLine($"Measurement: {measurement:N} units"); //uses N, numeric format specifier
+
+// //To display with more precision, example: up to 4 decimal places: use N4
+// Console.WriteLine($"Measurement: {measurement:N4} units");
+
+/* 5. Formatting percentage */
+// decimal tax = .36785m;
+// Console.WriteLine($"Tax rate: {tax:P4}");
+
+/* 6. Combining formatting approaches */
+//Using Composite formatting
+// decimal price = 67.55m;
+// decimal salePrice = 59.99m;
+
+// string yourDiscount = String.Format("You saved {0:C2} off the regular {1:C2} price. ", (price - salePrice), price);
+
+// Console.WriteLine(yourDiscount);
+
+
+/* Using string interpolation, no need to use String.Format() */
+// decimal price = 67.55m;
+// decimal salePrice = 59.99m;
+
+// string yourDiscount = String.Format("You saved {0:C2} off the regular {1:C2} price. ", (price - salePrice), price);
+
+// yourDiscount += $"A discount of {((price - salePrice)/price):P2}!"; //inserted
+// Console.WriteLine(yourDiscount);
+
+/* Display the invoice number using string interpolation */
+int invoiceNumber = 1201;
+decimal productShares = 25.4568m;
+decimal subtotal = 2750.00m;
+decimal taxPercentage = .15825m;
+decimal total = 3185.19m;
+
+Console.WriteLine($"Invoice Number: {invoiceNumber}");
+Console.WriteLine($"   Shares: {productShares:N3} Product");
+Console.WriteLine($"     Sub Total: {subtotal:C}");
+Console.WriteLine($"           Tax: {taxPercentage:P2}");
+Console.WriteLine($"     Total Billed: {total:C}");
