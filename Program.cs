@@ -434,7 +434,7 @@
 
 /* Exercise - Complete a challenge to apply string interpolation to a form letter */
 //Desired output//
-/* 
+/*
 Dear Ms. Barros,
 As a customer of our Magic Yield offering we are excited to tell you about a new financial product that would dramatically increase your return.
 
@@ -444,44 +444,86 @@ Our new product, Glorious Future offers a return of 13.13 %.  Given your current
 
 Here's a quick comparison:
 
-Magic Yield         12.75 %   $55,000,000.00      
+Magic Yield         12.75 %   $55,000,000.00
 Glorious Future     13.13 %   $63,000,000.00
 */
 
-string customerName = "Ms. Barros";
+// string customerName = "Ms. Barros";
 
-string currentProduct = "Magic Yield";
-int currentShares = 2975000;
-decimal currentReturn = 0.1275m;
-decimal currentProfit = 55000000.0m;
+// string currentProduct = "Magic Yield";
+// int currentShares = 2975000;
+// decimal currentReturn = 0.1275m;
+// decimal currentProfit = 55000000.0m;
 
-string newProduct = "Glorious Future";
-decimal newReturn = 0.13125m;
-decimal newProfit = 63000000.0m;
+// string newProduct = "Glorious Future";
+// decimal newReturn = 0.13125m;
+// decimal newProfit = 63000000.0m;
 
-// Your logic here
+// // Your logic here
 
-string currentReturnString = $"{currentReturn:P2}";
-string newReturnString = $"{newReturn:P2}";
-string currentProfitString = $"{currentProfit:C2}";
-string newProfitString = $"{newProfit:C2}";
+// string currentReturnString = $"{currentReturn:P2}";
+// string newReturnString = $"{newReturn:P2}";
+// string currentProfitString = $"{currentProfit:C2}";
+// string newProfitString = $"{newProfit:C2}";
 
-string comparisonMessage = "";
-string comparisonMessage2 = "";
-Console.WriteLine($"Dear {customerName}. As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.");
-Console.WriteLine($"Currently, you own {currentShares:C2} shares at a return of {currentReturn:P2}.");
-Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:P2}. Given your current volumne, your potential profis would be {newProfit:C2}");
-// Your logic here
-Console.WriteLine("Here's a quick comparison:\n");
+// string comparisonMessage = "";
+// string comparisonMessage2 = "";
+// Console.WriteLine($"Dear {customerName}. As a customer of our {currentProduct} offering we are excited to tell you about a new financial product that would dramatically increase your return.");
+// Console.WriteLine($"Currently, you own {currentShares:C2} shares at a return of {currentReturn:P2}.");
+// Console.WriteLine($"Our new product, {newProduct} offers a return of {newReturn:P2}. Given your current volumne, your potential profis would be {newProfit:C2}");
+// // Your logic here
+// Console.WriteLine("Here's a quick comparison:\n");
 
-comparisonMessage += currentProduct.PadLeft(11);
-comparisonMessage += currentReturnString.PadLeft(18);
-comparisonMessage += currentProfitString.PadLeft(20);
-comparisonMessage += "\n";
-comparisonMessage += newProduct.PadLeft(11);
-comparisonMessage += newReturnString.PadLeft(14);
-comparisonMessage += newProfitString.PadLeft(20);
+// comparisonMessage += currentProduct.PadLeft(11);
+// comparisonMessage += currentReturnString.PadLeft(18);
+// comparisonMessage += currentProfitString.PadLeft(20);
+// comparisonMessage += "\n";
+// comparisonMessage += newProduct.PadLeft(11);
+// comparisonMessage += newReturnString.PadLeft(14);
+// comparisonMessage += newProfitString.PadLeft(20);
 
+// // Console.WriteLine("1234567890123456789012345678901234567890");
+// Console.WriteLine(comparisonMessage);
+// Console.WriteLine(comparisonMessage2);
+
+/* Exercise - Use the string's IndexOf() and Substring() helper methods */
+// string message = "What is the value <span>between the tags</span>?";
+
+// int openingPosition = message.IndexOf("<span>");
+// int closingPosition = message.IndexOf("</span>");
+
+// Console.WriteLine(message);
 // Console.WriteLine("1234567890123456789012345678901234567890");
-Console.WriteLine(comparisonMessage);
-Console.WriteLine(comparisonMessage2);
+
+// Console.WriteLine(openingPosition);
+// Console.WriteLine(closingPosition);
+// string infoMessage = "<span>";
+// int messageLength = infoMessage.Length;
+// openingPosition += messageLength;
+// Console.WriteLine($"Add 6: {openingPosition}");
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length));
+
+// string message = "What is the value <span>between the tags</span>?";
+
+// const string openSpan = "<span>"; //const is hardcoded, can't be changed
+// const string closeSpan = "</span>";
+
+// int openingPosition = message.IndexOf(openSpan);
+// int closingPosition = message.IndexOf(closeSpan);
+
+// openingPosition += openSpan.Length;
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length));
+
+/* Exercise - Use the string's IndexOfAny() and LastIndexOf() helper methods */
+// Retrieve the last occurrence of a sub string
+// string message = "(What if) I am (only interested) in the last (set of parentheses)?";
+// int openingPosition = message.LastIndexOf('(');
+
+// openingPosition += 1;
+// int closingPosition = message.LastIndexOf(')');
+// int length = closingPosition - openingPosition;
+// Console.WriteLine(message.Substring(openingPosition, length));
+
+/* Retrieve all instances of substrings inside parentheses */
