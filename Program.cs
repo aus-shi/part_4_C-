@@ -526,4 +526,31 @@ Glorious Future     13.13 %   $63,000,000.00
 // int length = closingPosition - openingPosition;
 // Console.WriteLine(message.Substring(openingPosition, length));
 
-/* Retrieve all instances of substrings inside parentheses */
+// /* Retrieve all instances of substrings inside parentheses */
+// string message = "(What if) there are (more than) one (set of parentheses)?";
+// while (true)
+// {
+//     int openingPosition = message.IndexOf('(');
+//     if (openingPosition == -1) break;
+
+//     openingPosition += 1;
+//     int closingPosition = message.IndexOf(')');
+//     int length = closingPosition - openingPosition;
+//     Console.WriteLine(message.Substring(openingPosition, length));
+
+//     // Note the overload of the Substring to return only the remaining 
+//     // unprocessed message:
+//     message = message.Substring(closingPosition + 1); // used to remove previous parentheses that has been printed on console
+//     // Console.WriteLine(message);
+// }
+
+/* Work with different types of symbol sets */
+string message = "Help (find) the {opening symbols}";
+Console.WriteLine($"Searching THIS Message: {message}");
+char[] openSymbols = { '[', '{', '(' };
+int startPosition = 6;
+int openingPosition = message.IndexOfAny(openSymbols);
+Console.WriteLine($"Found WITHOUT using startPosition: {message.Substring(openingPosition)}");
+
+openingPosition = message.IndexOfAny(openSymbols, startPosition);
+Console.WriteLine($"Found WITH using startPosition: {message.Substring(openingPosition)}");
